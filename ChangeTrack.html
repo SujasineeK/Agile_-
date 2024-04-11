@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ICT</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <i class='bx bx-menu'></i>
+                <div class="logo"><a href="#">ICT STUDENT</a></div>
+                <div class="nav-links">
+                    <div class="sidebar-logo">
+                        <span class="logo-name">ICT STUDENT</span>
+                        <i class='bx bx-x'></i>
+                    </div>
+                    <ul class="links">
+                        <li><a href="#">HOME</a></li>
+                        <li>
+                            <a href="#">HISTORY</a>
+                            <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
+                            <ul class="htmlCss-sub-menu sub-menu">
+                                <li><a href="#">In progress</a></li>
+                                <li><a href="#">Complete</a></li>
+                                <li><a href="#">Cancel</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">PROFILE</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                    </ul>
+                </div>
+
+                <!-- Language change icon -->
+                <div class="icon">
+                    <i class='bx bx-globe language-icon'></i>
+                </div>
+
+                <div class="icon">
+                    <i class='bx bx-bell'></i>
+                </div>
+        </nav>
+    </header>
+
+
+    <!-- English content -->
+    <main>
+        <div class="content lang-en">
+            <form action="#">
+                <span class="date" id="currentDate"></span>
+                <script src="script.js"></script>
+                <h2>Changed Track Request Form</h2>
+                <p>
+                    <strong>
+                        Dear Assistant Dean for Academic Affairs, Faculty of ICT
+                    </strong>
+                </p>
+                <p>
+                <div for="uname">
+                    <input type="text" id="uname" name="name" placeholder="Name-Surname" required />
+                </div>
+                Student ID
+                <div>
+                    <input type="text" onkeypress=" return onlyNumberKey(event)" id="student_id" name="student_id"
+                        placeholder="Student ID" maxlength="7" required />
+                </div>
+                a student of the Bachelor of Science Program in Information and Communication Technology
+                <div>
+                    <input type="tel" id="phone" name="Mobile" placeholder="Mobile Phone"
+                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required />
+                </div>
+                </p>
+                <p>
+                <h4>I Would like to request the following changes : </h4>
+                </p>
+                <table class="track-table">
+                    <thead>
+                        <tr>
+                            <th>Current Track</th>
+                            <th>New Track</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select name="current_track">
+                                    <option value="CN">CN : Computer Network</option>
+                                    <option value="CS">CS : Computer Science</option>
+                                    <option value="DB">DB : Database and Intelligent Systems</option>
+                                    <option value="EB">EB : E-Business Systems</option>
+                                    <option value="HT">HT : Health Information Technology</option>
+                                    <option value="MM">MM : Multimedia Systems</option>
+                                    <option value="MS">MS : Management Information Systems</option>
+                                    <option value="SE">SE : Software Engineering</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="new_track">
+                                    <option value="CN">CN : Computer Network</option>
+                                    <option value="CS">CS : Computer Science</option>
+                                    <option value="DB">DB : Database and Intelligent Systems</option>
+                                    <option value="EB">EB : E-Business Systems</option>
+                                    <option value="HT">HT : Health Information Technology</option>
+                                    <option value="MM">MM : Multimedia Systems</option>
+                                    <option value="MS">MS : Management Information Systems</option>
+                                    <option value="SE">SE : Software Engineering</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    Reason :
+                </p>
+                <textarea name="reason" rows="5"></textarea>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+                <div class="qr">
+                    <img src="QR.jpg" alt="qr">
+                    <div class="qr-name">
+                        <h5>For more information, 0-2441-0909
+                            Ext. 141, 341, 342 (Registration Unit)</h5>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <!-- Thai content -->
+    <main>
+        <div class="content lang-th" style="display: none;">
+            <form action="#">
+                <span class="date" id="currentDate-th"></span>
+                <script src="script.js"></script>
+                <h2>แบบฟอร์มคำขอเปลี่ยนแปลงสาขาวิชา</h2>
+                <p>
+                    <strong>
+                        เรียน รองคณบดีฝ่ายวิชาการ คณะเทคโนโลยีสารสนเทศเเละการสื่อสาร
+                    </strong>
+                </p>
+                <p>
+                <div for="uname">
+                    <input type="text" id="uname" name="name" placeholder="ชื่อ-นามสกุล" required />
+                </div>
+                รหัสประจำตัวนักศึกษา
+                <div>
+                    <input type="text" onkeypress=" return onlyNumberKey(event)" id="student_id" name="student_id"
+                        placeholder="รหัสประจำตัวนักศึกษา" maxlength="7" required />
+                </div>
+                นักศึกษาคณะวิทยาการสารสนเทศและการสื่อสาร
+                <div>
+                    <input type="tel" id="phone" name="Mobile" placeholder="หมายเลขโทรศัพท์"
+                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required />
+                </div>
+                </p>
+
+                <p>
+                <h4>ข้าพเจ้าขอแจ้งความประสงค์เพื่อขอเปลี่ยนแปลงดังนี้ : </h4>
+                </p>
+                <table class="track-table">
+                    <thead>
+                        <tr>
+                            <th>สาขาวิชาปัจจุบัน</th>
+                            <th>สาขาวิชาใหม่</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select name="current_track">
+                                    <option value="CN">CN : Computer Network</option>
+                                    <option value="CS">CS : Computer Science</option>
+                                    <option value="DB">DB : Database and Intelligent Systems</option>
+                                    <option value="EB">EB : E-Business Systems</option>
+                                    <option value="HT">HT : Health Information Technology</option>
+                                    <option value="MM">MM : Multimedia Systems</option>
+                                    <option value="MS">MS : Management Information Systems</option>
+                                    <option value="SE">SE : Software Engineering</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="new_track">
+                                    <option value="CN">CN : Computer Network</option>
+                                    <option value="CS">CS : Computer Science</option>
+                                    <option value="DB">DB : Database and Intelligent Systems</option>
+                                    <option value="EB">EB : E-Business Systems</option>
+                                    <option value="HT">HT : Health Information Technology</option>
+                                    <option value="MM">MM : Multimedia Systems</option>
+                                    <option value="MS">MS : Management Information Systems</option>
+                                    <option value="SE">SE : Software Engineering</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    เหตุผล :
+                </p>
+                <textarea name="reason" rows="5"></textarea>
+                <p>
+                    <button type="submit">ส่ง</button>
+                </p>
+                <div class="qr">
+                    <img src="QR.jpg" alt="qr">
+                    <div class="qr-name">
+                        <h5>สำหรับข้อมูลเพิ่มเติม โทร 0-2441-0909
+                            ต่อ 141, 341, 342 (ฝ่ายทะเบียน)</h5>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <p>
+            &copy; 2024 Faculty of Information Technology and Communication, Mahidol University
+        </p>
+    </footer>
+</body>
+
+</html>

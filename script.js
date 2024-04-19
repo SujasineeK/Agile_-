@@ -71,30 +71,26 @@ htmlcssArrow.onclick = function () {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // เรียกใช้ฟังก์ชัน updateClock() เพื่อให้เวลาแสดงเป็น real-time
+  updateClock();
+  // กำหนดให้ฟังก์ชัน updateClock() ทำงานทุกๆ 1 วินาที
+  setInterval(updateClock, 1000);
+});
+
+function updateClock() {
   // สร้างวันที่และเวลาในรูปแบบข้อความ
   var today = new Date();
   var formattedDate = today.toLocaleDateString();
   var formattedTime = today.toLocaleTimeString();
 
-  // เข้าถึง HTML element ที่มี id เป็น "currentDate"
-  var dateElement = document.getElementById("currentDate");
+  // เข้าถึง HTML element ที่มี id เป็น "currentDate-en" และ "currentDate-th"
+  var dateElementEn = document.getElementById("currentDate-en");
+  var dateElementTh = document.getElementById("currentDate-th");
 
-  // กำหนดข้อความใน element เป็นวันที่และเวลาที่สร้าง
-  dateElement.textContent = "Date: " + formattedDate + " | Time: " + formattedTime;
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  // สร้างวันที่และเวลาในรูปแบบข้อความ
-  var today = new Date();
-  var formattedDate = today.toLocaleDateString();
-  var formattedTime = today.toLocaleTimeString();
-
-  // เข้าถึง HTML element ที่มี id เป็น "currentDate"
-  var dateElement = document.getElementById("currentDate-th");
-
-  // กำหนดข้อความใน element เป็นวันที่และเวลาที่สร้าง
-  dateElement.textContent = "วันที่: " + formattedDate + " | เวลา: " + formattedTime;
-});
+  // กำหนดข้อความใน element เป็นวันที่และเวลาปัจจุบัน
+  dateElementEn.textContent = "Date: " + formattedDate + " | Time: " + formattedTime;
+  dateElementTh.textContent = "วันที่: " + formattedDate + " | เวลา: " + formattedTime;
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('form');

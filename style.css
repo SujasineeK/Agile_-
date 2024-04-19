@@ -145,14 +145,15 @@ nav .navbar .links li:hover .js-sub-menu {
     position: absolute;
     height: 100%;
     width: 100%;
-    line-height: 40px;
     text-align: center;
-    font-size: 22px;
     color: #fff;
-    font-weight: 600;
+    margin-left: -20px;
+
     cursor: pointer;
     transition: all 0.3s ease;
+
 }
+
 
 .navbar.showInput .search-box {
     top: 65px;

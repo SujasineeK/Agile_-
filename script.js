@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // กำหนดให้ฟังก์ชัน updateClock() ทำงานทุกๆ 1 วินาที
   setInterval(updateClock, 1000);
 });
-
 function updateClock() {
   // สร้างวันที่และเวลาในรูปแบบข้อความ
   var today = new Date();

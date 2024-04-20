@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <!-- FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styleAdmin.css">
+    <script src="scriptAdmin.js"></script>
 </head>
+
 <body>
+    <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="navbar-brand"><img src="logoict.png"></a>
-        <ul class="navbar-nav">
-            <a href="#">Admin muict</a>
-        </ul>
+        <div class="icona">
+            <i class='fas fa-user-circle'>  Admin muict</i>
+        </div>
+
+        <div class="icond">
+            <i class='fas fa-angle-down'></i>
+        </div>
     </nav>
-    
+
     <div class="container">
         <h1>Admin Page</h1>
         <table>
@@ -32,14 +41,22 @@
                 <tr>
                     <td>1</td>
                     <td>
-                        Request Details 
+                        Request Details
                     </td>
                     <td>Pending</td>
                     <td>
-                        <button class="btn btn-approve">Approve</button>
-                        <button class="btn btn-reject">Reject</button>
-                         <!-- เพิ่มไอคอนปุ่มปริ้น -->
-                         <i class="fas fa-print" style="float:right;"></i>
+                        
+                        <button class="btn btn-approve" id="btn-approve">Approve</button>
+                        <button class="btn btn-reject" id="btn-reject">Reject</button>
+                        
+                        <!-- เพิ่มไอคอนปุ่มปริ้น -->
+                        <!-- <i class="fas fa-print" style="float:right;"></i> -->
+                        <!-- <div id="printableArea">
+                            <h1>Print me</h1>
+                        </div> -->
+
+                        <input type="button" onclick="printDiv('printableArea')" value="print!" /> 
+                        
                     </td>
 
                 </tr>
@@ -47,4 +64,5 @@
         </table>
     </div>
 </body>
+
 </html>

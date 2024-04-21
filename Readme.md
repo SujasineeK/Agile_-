@@ -1,3 +1,21 @@
+# setting database
+1. create database by database.sql
+2. Go to database.py to config
+
+```
+
+mysql_config = {
+    "host": "localhost",
+    "user": "root",
+    "password": "",  
+    "db": "ictdatabase",  
+    "autocommit": True,
+}
+
+```
+
+<hr />
+
 # activate myenv
 
 ```
@@ -19,3 +37,5 @@ pip install -r requirements.txt
 ```
 uvicorn main:app --reload
 ```
+
+<hr />

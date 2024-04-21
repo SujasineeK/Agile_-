@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+.btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+}
+.btn-approve {
+    background-color: #4CAF50;
+}
+.btn-reject {
+    background-color: #f44336;
+}
+
+.navbar {
+    width: 100%;
+    background: linear-gradient(to right, #ffffc9, #8de9d5);
+    overflow:hidden;
+}
+
+.navbar a {
+    float: left;
+    padding: 12px;
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar ul a{
+    background-color: #000000;
+    color: #ddd;
+    margin-left: 70%;
+}
+
+.navbar img {
+    width: 90px;
+    margin-left: 180px;
+}
+
+.navbar .icona {
+    position: relative;
+    height: 15px;
+    margin-left: -625px;
+    margin-top: 35px;
+}
+
+
+.navbar .icona i {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #006C6C;
+    margin-left: -20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+
+.navbar .icond {
+    position: relative;
+    height: 10px;
+    margin-left: -780px;
+    margin-top: -12px;
+}
+
+
+.navbar .icond i {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #006C6C;
+    margin-left: -20px;
+    cursor: pointer;
+}
+
+h1 {
+    margin-top: 4%;
+}
+table {
+    border-collapse:separate;
+    border:solid black 3px;
+    border-radius:10px;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
+
+td i {
+    margin-top: 7px;
+}
+
+td .btn-approve{
+    border-radius: 10px;
+    margin-right: 5px;
+
+}
+
+td .btn-reject{
+    border-radius: 10px;
+}
+
+td input {
+    margin-left: 70%;
+}
+

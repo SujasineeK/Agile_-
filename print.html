@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ICT</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Boxicons CDN Link -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,50 +14,14 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="navbar">
-                <i class='bx bx-menu'></i>
-                <div class="logo"><a href="#">ICT STUDENT</a></div>
-                <div class="nav-links">
-                    <div class="sidebar-logo">
-                        <span class="logo-name">ICT STUDENT</span>
-                        <i class='bx bx-x'></i>
-                    </div>
-                    <ul class="links">
-                        <li><a href="#">HOME</a></li>
-                        <li>
-                            <a href="#">HISTORY</a>
-                            <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
-                            <ul class="htmlCss-sub-menu sub-menu">
-                                <li><a href="#">In progress</a></li>
-                                <li><a href="#">Complete</a></li>
-                                <li><a href="#">Cancel</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">PROFILE</a></li>
-                        <li><a href="#">ABOUT US</a></li>
-                        <li><a href="#">CONTACT US</a></li>
-                    </ul>
-                </div>
-
-                <!-- Language change icon -->
-                <div class="icon">
-                    <i class='bx bx-globe language-icon'>Change Language</i>
-                </div>
-
-                <div class="icon">
-                    <i class='bx bx-bell'></i>
-                </div>
-        </nav>
-    </header>
-
-
     <!-- English content -->
-    <main>
+    <main style="margin: 0;">
         <div class="content lang-en">
-            <form action="#" method="post" id="request_from">
-                <span class="date" id="currentDate-en"></span>
+            <form action="#" method="post" id="request_from" style="margin: 0;" style="margin: 0;border: 0;">
+                <p style="font-size: 14px; color: gray;">
+                    Date: {{request_data.created_date}} | Time: {{request_data.created_time}};
+                </p>
+
                 <h2>Changed Track Request Form</h2>
                 <p>
                     <strong>
@@ -67,21 +30,23 @@
                 </p>
                 <p>
                 <div for="student_name">
-                    <input type="text" id="student_name" name="student_name" placeholder="Name-Surname" required />
+                    <input type="text" id="student_name" name="student_name" value="{{request_data.student_name}}"
+                        placeholder="Name-Surname" required />
                 </div>
                 Student ID
                 <div>
                     <input type="text" onkeypress=" return onlyNumberKey(event)" id="student_id" name="student_id"
-                        placeholder="Student ID" maxlength="7" required />
+                        value="{{request_data.student_id}}" placeholder="Student ID" maxlength="7" required />
                 </div>
                 <p>
                     Email
-                    <input type="email" id="email" name="email" placeholder="Email" required />
+                    <input type="email" id="email" name="email" placeholder="Email" value="{{request_data.email}}"
+                        required />
                 </p>
                 a student of the Bachelor of Science Program in Information and Communication Technology
                 <div>
                     <input type="tel" id="phone" name="mobile_number" placeholder="Mobile Phone"
-                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required />
+                        value="{{request_data.mobile_number}}" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required />
                 </div>
                 </p>
                 <p>
@@ -98,54 +63,74 @@
                         <tr>
                             <td>
                                 <select name="current_track">
-                                    <option value="CN">CN : Computer Network</option>
-                                    <option value="CS">CS : Computer Science</option>
-                                    <option value="DB">DB : Database and Intelligent Systems</option>
-                                    <option value="EB">EB : E-Business Systems</option>
-                                    <option value="HT">HT : Health Information Technology</option>
-                                    <option value="MM">MM : Multimedia Systems</option>
-                                    <option value="MS">MS : Management Information Systems</option>
-                                    <option value="SE">SE : Software Engineering</option>
+                                    <option value="CN" {% if request_data.current_track=="CN" %} selected {% endif %}>CN
+                                        : Computer Network</option>
+                                    <option value="CS" {% if request_data.current_track=="CS" %} selected {% endif %}>CS
+                                        : Computer Science</option>
+                                    <option value="DB" {% if request_data.current_track=="DB" %} selected {% endif %}>DB
+                                        : Database and Intelligent Systems</option>
+                                    <option value="EB" {% if request_data.current_track=="EB" %} selected {% endif %}>EB
+                                        : E-Business Systems</option>
+                                    <option value="HT" {% if request_data.current_track=="HT" %} selected {% endif %}>HT
+                                        : Health Information Technology</option>
+                                    <option value="MM" {% if request_data.current_track=="MM" %} selected {% endif %}>MM
+                                        : Multimedia Systems</option>
+                                    <option value="MS" {% if request_data.current_track=="MS" %} selected {% endif %}>MS
+                                        : Management Information Systems</option>
+                                    <option value="SE" {% if request_data.current_track=="SE" %} selected {% endif %}>SE
+                                        : Software Engineering</option>
                                 </select>
+
                             </td>
                             <td>
                                 <select name="new_track">
-                                    <option value="CN">CN : Computer Network</option>
-                                    <option value="CS">CS : Computer Science</option>
-                                    <option value="DB">DB : Database and Intelligent Systems</option>
-                                    <option value="EB">EB : E-Business Systems</option>
-                                    <option value="HT">HT : Health Information Technology</option>
-                                    <option value="MM">MM : Multimedia Systems</option>
-                                    <option value="MS">MS : Management Information Systems</option>
-                                    <option value="SE">SE : Software Engineering</option>
+                                    <option value="CN" {% if request_data.new_track=="CN" %} selected {% endif %}>CN :
+                                        Computer Network</option>
+                                    <option value="CS" {% if request_data.new_track=="CS" %} selected {% endif %}>CS :
+                                        Computer Science</option>
+                                    <option value="DB" {% if request_data.new_track=="DB" %} selected {% endif %}>DB :
+                                        Database and Intelligent Systems</option>
+                                    <option value="EB" {% if request_data.new_track=="EB" %} selected {% endif %}>EB :
+                                        E-Business Systems</option>
+                                    <option value="HT" {% if request_data.new_track=="HT" %} selected {% endif %}>HT :
+                                        Health Information Technology</option>
+                                    <option value="MM" {% if request_data.new_track=="MM" %} selected {% endif %}>MM :
+                                        Multimedia Systems</option>
+                                    <option value="MS" {% if request_data.new_track=="MS" %} selected {% endif %}>MS :
+                                        Management Information Systems</option>
+                                    <option value="SE" {% if request_data.new_track=="SE" %} selected {% endif %}>SE :
+                                        Software Engineering</option>
                                 </select>
                             </td>
+
                         </tr>
                     </tbody>
                 </table>
                 <p>
                     Reason :
                 </p>
-                <textarea name="reason" rows="5"></textarea>
-                <p>
-                    <button type="submit">Submit</button>
-                </p>
-                <div class="qr">
-                    <img src="QR.jpg" alt="qr">
-                    <div class="qr-name">
-                        <h5>For more information, 0-2441-0909
-                            Ext. 141, 341, 342 (Registration Unit)</h5>
-                    </div>
+                <textarea name="reason" rows="5">{{request_data.reason}}
+                </textarea>
+
+                <div>
+                    <p>Signature</p>
+                    ___________________________
                 </div>
+                <div style="margin-top: 20px;">
+                    <img src="{{ url_for('static', path='/confirm.png') }}" alt="Signature"
+                    style="width:100%;"
+                     />
+                </div>
+
             </form>
         </div>
     </main>
 
 
     <!-- Thai content -->
-    <main>
+    <main style="margin: 0;">
         <div class="content lang-th" style="display: none;">
-            <form action="" id="request_form" method="post">
+            <form action="" id="request_form" method="post" style="margin: 0;">
                 <span class="date" id="currentDate-th"></span>
                 <h2>แบบฟอร์มคำขอเปลี่ยนแปลงสาขาวิชา</h2>
                 <p>
@@ -212,31 +197,18 @@
                     เหตุผล :
                 </p>
                 <textarea name="reason" rows="5"></textarea>
-                <p>
-                    <button type="submit">ส่ง</button>
-                </p>
-                <div class="qr">
-                    <img src="QR.jpg" alt="qr">
-                    <div class="qr-name">
-                        <h5>สำหรับข้อมูลเพิ่มเติม โทร 0-2441-0909
-                            ต่อ 141, 341, 342 (ฝ่ายทะเบียน)</h5>
-                    </div>
-                </div>
+
+
             </form>
         </div>
     </main>
 
 
-
-    <footer>
-        <p>
-            &copy; 2024 Faculty of Information Technology and Communication, Mahidol University
-        </p>
-    </footer>
-
-
-    <script src="ChangeTrackApi.js"></script>
-    <script src="script.js"></script>
 </body>
-
+<script>
+    //auto print page
+    window.onload = function () {
+        window.print();
+    }
+</script>
 </html>

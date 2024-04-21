@@ -91,38 +91,6 @@ function updateClock() {
   dateElementTh.textContent = "วันที่: " + formattedDate + " | เวลา: " + formattedTime;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
-  form.addEventListener('submit', function (event) {
-      // ยกเลิกการส่งฟอร์มเพื่อตรวจสอบข้อมูลก่อนการส่ง
-      event.preventDefault();
-
-      // เพิ่มเงื่อนไขตรวจสอบข้อมูลในฟอร์ม
-      const name = form.elements['name'].value.trim();
-      const studentId = form.elements['student_id'].value.trim();
-      const mobile = form.elements['Mobile'].value.trim();
-      const currentTrack = form.elements['current_track'].value;
-      const newTrack = form.elements['new_track'].value;
-      const reason = form.elements['reason'].value.trim();
-
-      // เงื่อนไขตรวจสอบข้อมูล
-      if (name === '' || studentId === '' || mobile === '' || currentTrack === '' || newTrack === '' || reason === '') {
-          alert('Please fill out all fields.');
-          return;
-      }
-      // ถ้าข้อมูลถูกต้อง ถามผู้ใช้ด้วย confirm ก่อนการส่งฟอร์ม
-      const confirmation = confirm('Are you sure you want to submit the form?');
-
-      // ถ้าผู้ใช้กด OK ให้ส่งฟอร์ม
-      if (confirmation) {
-          form.submit();
-          alert("Submit Successfully!")
-      } else {
-      // ถ้าผู้ใช้กด Cancel ไม่ต้องทำอะไร
-          return ;
-      }
-  });
-});
 
 function onlyNumberKey(evt) {
   // Only ASCII character in that range allowed

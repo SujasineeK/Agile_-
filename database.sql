@@ -21,3 +21,13 @@ CREATE TABLE IF NOT EXISTS request_list (
 
 
 select * from request_list;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    role ENUM('admin', 'student') NOT NULL
+);
+INSERT INTO users (username, password, role) VALUES
+('admin@mahidol.edu', '1234', 'admin'),
+('student@student.mahidol.edu', '1234', 'student');

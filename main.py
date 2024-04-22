@@ -120,3 +120,21 @@ async def print_request_page(request_id: int, request: Request):
         raise HTTPException(status_code=404, detail="Request not found")
             
     return templates.TemplateResponse("print.html", {"request_id": request_id, "request": request, "request_data": request_data})
+
+
+@app.post("/login")
+
+async def login(request_data: dict):
+    print(request_data)
+    try:
+        async with app.state.mysql_pool.acquire() as connection:
+            async with connection.cursor() as cursor:
+                sql = "SELECT * FROM users WHERE username = %s AND password = %s"
+                await cursor.execute(sql, (request_data["username"], request_data["password"]))
+                result = await cursor.fetchone()
+                if result:
+                    return {"message": "Login successful"}
+                else:
+                    raise HTTPException(status_code=401, detail="Invalid credentials")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

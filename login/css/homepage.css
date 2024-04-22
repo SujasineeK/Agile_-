@@ -1,0 +1,339 @@
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  display: block;
+  margin: 0px;
+  ;
+}
+
+div.approve {
+  padding-left: 30px;
+  padding-bottom: 8px;
+  text-align: left;
+  color: rgba(9, 44, 76, 1);
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  background-color: #E7EEF6;
+  color: white;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main-title {
+  font-size: 18px;
+  margin-left: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.sub-links a {
+  padding-left: 40px;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgb(55 100 141);
+  font-weight: bolder;
+}
+
+.sub-links a:hover {
+  text-decoration: underline;
+}
+
+.right-icons {
+  padding: 10px;
+  display: flex;
+  /* ให้ไอคอนอยู่ในเส้นเดียวกัน */
+  margin-left: auto;
+}
+
+.right-icons img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0, 0.81, 0.58, 1);
+}
+
+.left-icons {
+  padding: 10px;
+}
+
+.left-icons img {
+  width: 40px;
+  height: 70px;
+}
+
+.right-icons img:hover {
+  transform: scale(1.2);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+:root {
+  --Red: hsl(1, 90%, 64%);
+  /* --Blue: hsl(219, 85%, 26%); */
+  --White: hsl(0, 0%, 100%);
+  --Very-light-grayish-blue: hsl(210, 60%, 98%);
+  --Light-grayish-blue-1: hsl(211, 68%, 94%);
+  --Light-grayish-blue-2: hsl(205, 33%, 90%);
+  --Grayish-blue: hsl(219, 14%, 63%);
+  --Dark-grayish-blue: hsl(219, 12%, 42%);
+  --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+
+
+
+.container_noti {
+  /* margin: 2rem; */
+  width: 513px;
+  background-color: var(--White);
+  padding: 6px;
+  border-radius: 14px;
+  box-shadow: -4px 8px 12px 4px #94a2a7;
+}
+
+.notif_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+#notifes {
+  background-color: #006C6C;
+  margin-left: 0.5rem;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  color: var(--White);
+  font-weight: 800;
+  border-radius: 0.5rem;
+}
+
+#mark_all {
+  cursor: pointer;
+}
+
+#mark_all:hover {
+  color: #006C6C;
+}
+
+p {
+  margin-left: 50px;
+  color: var(--Dark-grayish-blue);
+}
+
+main-noti {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+
+.container_noti img {
+  width: 50px;
+}
+
+.description {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+strong {
+  color: var(--Very-dark-blue);
+  cursor: pointer;
+}
+
+strong:hover {
+  color: #006C6C;
+}
+
+.unread {
+  background-color: #fae5ef;
+}
+
+.unread p:first-of-type::after {
+  content: " ";
+  background-color: var(--Red);
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+.notif_card {
+  font-size: 15px;
+  border-top: 1px solid #8e8484;
+  display: flex;
+  height: 100px;
+  padding: 4px;
+  margin-left: 30px;
+  margin-right: 30px;
+  align-items: center;
+
+}
+
+.container_noti img {
+  width: 50px;
+}
+
+.description {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+strong {
+  color: var(--Very-dark-blue);
+  cursor: pointer;
+}
+
+strong:hover {
+  color: #006C6C;
+}
+
+.unread {
+  background-color: #fae5ef;
+}
+
+.unread p:first-of-type::after {
+  content: " ";
+  background-color: var(--Red);
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+
+.avatar {
+  border-radius: 50%;
+}
+
+#popup_noti {
+  display: none;
+}
+
+.popup-content_noti {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  max-width: 550px;
+  padding: 5px;
+  /* background-color: #fff; */
+  z-index: 1000;
+  justify-content: flex-end;
+}
+
+.close_noti {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.card-container {
+ 
+   padding: 30px;
+}
+.container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-bottom: 10px;
+}
+.card {
+    width: 300px;
+    height: 350px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    box-shadow: 5px 10px 18px #bbbbbb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.card h5 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #006C6C;
+    color: #fff;
+    padding: 10px 90px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.btn-primary:hover {
+    background-color: #006C6C;
+}
+h1{
+   color: #006C6C;
+    text-align: center;
+
+}
+.center{
+    margin-top: 100px;
+  
+}
+.center img{
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: flex;
+}
+.container p{
+
+  display: flex;
+
+}
+
+.btnpdpa{
+  text-align: center;
+   margin-top: 100px;
+}
+.btnpdpa a{
+
+  background-color: #006C6C;
+  color: #fff;
+  padding: 10px 90px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 100px;
+  place-content: center;
+}
+
+.agree{
+  margin-top: 100px ;
+  text-align: center;
+}
